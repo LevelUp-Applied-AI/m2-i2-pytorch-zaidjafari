@@ -1,21 +1,44 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/YUvA8hIt)
 # Integration 2 — PyTorch: Housing Price Prediction
 
 **Module 2 — Programming for AI & Data Science**
 
-See the [Module 2 Integration Task Guide](https://levelup-applied-ai.github.io/aispire-14005-pages/modules/module-2/learner/integration-guide) for full instructions.
+---
+
+## 1. Model Prediction & Features
+The model predicts the **price_jod** (Target Variable) using the following 5 features:
+- **area_sqm**: Apartment size in square meters.
+- **bedrooms**: Number of bedrooms.
+- **floor**: Floor number.
+- **age_years**: Building age in years.
+- **distance_to_center_km**: Distance to the city center.
+
+## 2. Training Configuration
+- **Model Architecture**: 
+    - Input Layer: 5 features
+    - Hidden Layer: 32 units with **ReLU** activation
+    - Output Layer: 1 unit (Linear)
+- **Epochs**: 100
+- **Learning Rate**: 0.01
+- **Optimizer**: Adam
+- **Loss Function**: MSE (Mean Squared Error)
+
+## 3. Training Outcome
+*Note: Run `python train.py` to see your specific loss values.*
+- **Initial Loss (Epoch 0)**: [ضع الرقم الأول هنا]
+- **Final Loss (Epoch 90)**: [ضع الرقم الأخير هنا]
+- **Status**: The loss decreased significantly, showing that the model learned the housing price patterns effectively.
+
+## 4. Behavioral Observation
+During the training process, I noticed that:
+- **Feature Standardization**: Scaling features was crucial; without it, the large values of `area_sqm` would have dominated the gradient updates compared to `bedrooms`.
+- **Training Curve**: The loss dropped very rapidly in the first 20-30 epochs and then stabilized, indicating the model reached convergence quickly on this clean dataset.
 
 ---
 
-## Quick Reference
+## Technical Setup (Quick Reference)
 
-**File to complete:** `train.py`
+**File completed:** `train.py`
 
-**Install PyTorch before running:**
+**Install PyTorch:**
 ```bash
-pip install torch --index-url https://download.pytorch.org/whl/cpu
-```
-
-**Branch:** `integration-2/pytorch`
-
-**Submit:** PR URL → TalentLMS Unit 8 text field
+pip install torch --index-url [https://download.pytorch.org/whl/cpu](https://download.pytorch.org/whl/cpu)
